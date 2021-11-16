@@ -1,5 +1,5 @@
 var express = require('express');
-var port = 5000;
+var port = process.env.PORT || 5000;
 
 express()
     .get('/', (req, res) => res.send('Hello World'))
