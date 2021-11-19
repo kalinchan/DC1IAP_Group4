@@ -20,9 +20,9 @@ const FormSchema = new mongoose.Schema({
     contact: Boolean,
     phone: Number
 });
+const Interest = mongoose.model('Interest', FormSchema);
 
 async function sendData(req, res) {
-    const Interest = mongoose.model('Interest', FormSchema);
     const document = new Interest({
         name: (req.body.name),
         occupation: (req.body.occupation),
@@ -40,8 +40,17 @@ async function sendData(req, res) {
     res.sendFile(__dirname + "/index.html")
 }
 
+async function getDataCount(){
+    Interest.count({}, function (err, count){
+        return (count + " people have registered their interest in Drone Drop!")
+    })
+}
 express()
-    .get('/index.html', (req, res) => res.sendFile( __dirname+ "/index.html"))
+    .use(express.static(__dirname))
+    .get('/', (req, res) => {
+        req.addParameter("interest", getDataCount());
+        res.render(__dirname + "/index.html", {interest: getDataCount()})
+    })
     .use("/css",express.static("css"))
     .use("/res",express.static("res"))
     .use("/js",express.static("js"))
@@ -51,4 +60,5 @@ express()
     })
     .get('/contact', (req, res) => res.sendFile(__dirname + "/contact.html"))
     .get('/register', (req, res) => res.sendFile(__dirname + "/register.html"))
+    .get('/amount', () => getDataCount())
     .listen(port, () => console.log(`Listening on ${ port }`));
