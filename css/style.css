@@ -1,0 +1,147 @@
+/*default*/
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+/*navbar*/
+.nav{
+  background: #131313;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+.item {
+  height: 80px;
+}
+
+ .item_button {
+    padding: 7.5px 15px;
+    background: teal;
+    border: 1px #006d6d solid;
+    border-radius:50em;
+}
+
+/*Footer*/
+.footer_container {
+	display: flex;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: #262626;
+}
+
+h4, p {
+	color: white;
+}
+
+a:hover{
+	cursor: pointer;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  max-width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+a {
+	color: white;
+  text-decoration: none;
+	}
+
+/* Mobile menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    width: 100%;
+    text-align: center;
+    order: 3;
+    display: none;
+}
+.item.active {
+  display: block;
+}
+
+/* Navbar Toggle */
+.toggle {
+    cursor:pointer;
+}
+.bars {
+    background: #999;
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+.bars:before,
+.bars:after {
+    background: #999;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.bars:before {
+  top: 5px;
+}
+.bars:after {
+  top: -5px;
+}
+
+/*Main menu*/
+.main{
+	color:white;
+	/*background needs changing*/
+	background:#fff;
+	padding: 100px 0;
+}
+
+.main_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	height: 90%;
+	text-align: center;
+	padding: 30px;
+}
+.content {
+	font-size: 30px;
+	margin-bottom: 24px;
+	color: #131313;
+}
