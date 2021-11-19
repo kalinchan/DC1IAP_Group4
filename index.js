@@ -15,8 +15,10 @@ const FormSchema = new mongoose.Schema({
     country: String,
     email: String,
     context: String,
+    othercontext: String,
     updates: Boolean,
-    contact: Boolean
+    contact: Boolean,
+    phone: Number
 });
 
 async function sendData(req, res) {
@@ -28,20 +30,25 @@ async function sendData(req, res) {
         country: (req.body.country),
         email: (req.body.email),
         context: (req.body.context),
+        othercontext: (req.body.othercontext),
         updates: (req.body.updates === 'true'),
-        contact: (req.body.contact === 'true')
+        contact: (req.body.contact === 'true'),
+        phone: (req.body.phone)
     });
     document.markModified('anything');
     document.save();
-    res.json(document)
+    res.sendFile(__dirname + "/index.html")
 }
 
 express()
-    .get('/', (req, res) => res.send('Hello World'))
-    .use(express.static("public"))
+    .get('/index.html', (req, res) => res.sendFile( __dirname+ "/index.html"))
+    .use("/css",express.static("css"))
+    .use("/res",express.static("res"))
+    .use("/js",express.static("js"))
     .use(express.urlencoded({extended: true}))
-    .get('/test', (req, res) => res.sendFile(__dirname + "/test.html"))
-    .post('/post', async (req, res) => {
-        sendData(req, res)
+    .post('/addData', async (req, res) => {
+        await sendData(req, res)
     })
+    .get('/contact', (req, res) => res.sendFile(__dirname + "/contact.html"))
+    .get('/register', (req, res) => res.sendFile(__dirname + "/register.html"))
     .listen(port, () => console.log(`Listening on ${ port }`));

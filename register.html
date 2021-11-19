@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Your Interest</title>
-    <script src="registerValidation.js"></script>
-    <link rel="stylesheet" type="text/css" href="registerFormatting.css">
+    <script src="js/registerValidation.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/registerFormatting.css">
 </head>
     <body>
         <p id="information">
             To register your interest in Drone Drop please complete the form below.
         </p>
-        <form id="register-interest" onsubmit="validateForm()">
+        <form id="register-interest" onsubmit="return validateForm()" action="/addData" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required> <br>
 
@@ -18,7 +18,7 @@
             <input type="text" id="occupation" name="occupation" required> <br>
 
             <label for="company">Company Name:</label>
-            <input type="text" id="company" name="company-name" required> <br>
+            <input type="text" id="company" name="company" required> <br>
 
             <label for="country">What Country are you based in?</label>
             <select id="country" name="country">
@@ -31,26 +31,26 @@
             <input type="email" id="email" name="email" required> <br>
 
             <div id="hear-about-us">
-                <label for="hear-about-us-input">How did you hear about us?</label>
-                <select id="hear-about-us-input" name="hear-about-us" onclick="otherSelected()">
+                <label for="context">How did you hear about us?</label>
+                <select id="context" name="context" onclick="otherSelected()">
                     <option value="Google/Search Engine">Google/Search Engine</option>
                     <option value="Peer Referral">Peer Referral</option>
                     <option value="Social Media">Social Media</option>
                     <option value="Other">Other</option>
                 </select> <br>
 
-                <label id= "hear-about-us-other-label" for="hear-about-us-other" class="hidden">Please tell us how you heard about us:</label>
-                <textarea id="hear-about-us-other" name="other-details" hidden></textarea> <br>
+                <label id= "hear-about-us-other-label" for="othercontext" class="hidden">Please tell us how you heard about us:</label>
+                <textarea id="othercontext" name="othercontext" hidden></textarea> <br>
             </div>
 
             <label for="updates">Would you like to receive updates from us?</label>
             <input type="checkbox" id="updates" name="recieve-updates" checked> <br>
 
-            <label for="contact-me">Would you be happy for us to contact you?</label>
-            <input type="checkbox" id="contact-me" name="contact-me" checked onclick="contactSelected()"> <br>
+            <label for="contact">Would you be happy for us to contact you?</label>
+            <input type="checkbox" id="contact" name="contact-me" checked onclick="contactSelected()"> <br>
 
             <label id="phone-label" for="phone">Contact Number:</label>
-            <input type="tel" id="phone" name="phone-number" required> <br>
+            <input type="tel" id="phone" name="phone" required> <br>
 
             <input type="submit" value="Register">
         </form>

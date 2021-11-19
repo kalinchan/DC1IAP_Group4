@@ -13,6 +13,7 @@ function validateForm() {
     }
     if(!error) {
         alert("Thank you for registering!")
+        return true;
     }
 }
 
