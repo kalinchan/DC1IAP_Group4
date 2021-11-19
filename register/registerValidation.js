@@ -1,12 +1,19 @@
 function validateForm() {
+    let error = false;
     let countryCallingCode = callingCode();
-    if(!validPhoneNumberLength()) {
-        alert("Your phone number isn't a valid length.")
+    if(document.getElementById("register-interest").elements["contact-me"].checked) {
+        if(!validPhoneNumberLength(countryCallingCode)) {
+            alert("Your phone number isn't a valid length.")
+            error = true;
+        }
+        if (!validPhoneNumberCallingCode(countryCallingCode)) {
+            alert("Your phone number doesn't match the country you're based in.")
+            error = true;
+        }
     }
-    if (!validPhoneNumberCallingCode(countryCallingCode)) {
-        alert("Your phone number doesn't match the country you're based in.")
+    if(!error) {
+        alert("Thank you for registering!")
     }
-    alert("Thank you for registering!")
 }
 
 function otherSelected() {
@@ -46,9 +53,10 @@ function callingCode() {
         return "+353"
     }
 }
-function validPhoneNumberLength() {
+
+function validPhoneNumberLength(callingCode) {
     let phoneNo = document.getElementById("register-interest").elements["phone"]
-    return phoneNo.value.length === 11;
+    return phoneNo.value.replace(callingCode, "").length === 10;
 
 }
 function validPhoneNumberCallingCode (callingCode) {
