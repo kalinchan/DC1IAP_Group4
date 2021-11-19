@@ -129,8 +129,8 @@ a:hover {
 
 /*Footer*/
 .footer_container {
-	display: flex;
-  height: 100vh;
+  display: flex;
+  padding: 5px 20px;
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -176,4 +176,46 @@ ul {
 	font-size: 30px;
 	margin-bottom: 24px;
 	color: #131313;
+}
+
+/*Partners*/
+.partners {
+  background: #131313;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10rem 0;
+}
+
+
+.partners_card {
+  margin: 10px;
+  height: 425px;
+  width: 300px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+	text-align: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s ease-in;
+}
+
+.partner_card h2 {
+  text-align: center;
+	color: #fff;
+}
+
+.partner_card h1 {
+  text-align: center;
+	color: #fff;
+}
+
+.partner_card p {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 20px;
 }
