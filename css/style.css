@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*default*/
 *{
   margin: 0;
@@ -145,3 +146,104 @@ a {
 	margin-bottom: 24px;
 	color: #131313;
 }
+=======
+body{
+	color:#F1F1F1;
+	font-family:arial;
+	background-color:#B6BDBC;
+	padding: 40px;
+	display:flex;
+	flex-wrap:wrap;
+	margin-left: 70px;
+}
+
+nav{
+		display:flex;
+		flex-wrap:wrap;
+		border-radius: 25px;
+		margin-left: 20px;
+		padding: 20px;
+		border: 2px solid #2D4930;
+		display:inline-block;
+}
+
+nav,#social{
+	margin: 20px;
+	padding: 20px;
+	background: D6DAD9;
+	border:2px solid #E3E7E6;
+	border-radius: 5px;
+}
+
+#fs-toggle:not(:fullscreen) {
+  padding-right: 300px;
+  #social{
+	margin-bottom: 0;
+	margin-right: 20px;
+	padding-top: 10px;
+	padding-right: 300px;
+	position: absolute;
+	bottom: 0;
+}
+}
+
+#social{
+	margin-bottom: 0;
+	margin-right: 20px;
+	padding-top: 10px;
+	position: absolute;
+	bottom: 0;
+}
+
+h1{
+	font-size: 50px;
+}
+h2{
+	font-size: 30px;
+}
+
+h4{
+	font-size: 50px;
+}
+p{
+	font-family:calibri;
+	font-size: 15px;
+}
+
+.col-1 {
+	width: 15%;
+	}
+.col-2 {
+	width: 20%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.33%;
+}
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+	}
+.col-9 {
+	width: 75%;
+	}
+.col-10 {
+	width: 83.33%;
+	}
+.col-11 {
+	width: 80%;
+	}
+.col-12 {
+	width: 100%;
+	}
+>>>>>>> Stashed changes
